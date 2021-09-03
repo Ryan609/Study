@@ -1,0 +1,13 @@
+public class Problem03{
+    public static void main(String[] args) {
+    	
+    	//Define  variables text.
+    	String text = "Hello world";
+
+        //Print value Text
+    	System.out.println(text);
+        System.out.println(1);
+        
+    }
+
+}

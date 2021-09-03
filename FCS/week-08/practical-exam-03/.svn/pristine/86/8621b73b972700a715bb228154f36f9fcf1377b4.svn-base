@@ -1,0 +1,22 @@
+public class Chisel extends HandTool {
+
+	//No-parameter construction method
+	public Chisel() {}
+
+	//Constructor with parameters
+	public Chisel(float weight, float value) {
+		super(weight, value, true);
+	}
+
+	//Rewrite method
+	@Override
+	public void useTool(int number) {
+		System.out.println("Scrape");
+		if (this.getValue() >= 0) {
+			this.setValue() = this.setValue() - number * 0.02f;
+		}
+
+
+	}
+
+}

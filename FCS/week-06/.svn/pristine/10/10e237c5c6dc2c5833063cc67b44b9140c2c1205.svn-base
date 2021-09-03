@@ -1,0 +1,91 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: s1
+// Year:2021
+// Practical Number:practical-04 part2
+//===================================
+
+public class HanoiTower {
+
+	//Initialize the definition disk, initial pole (1), auxiliary pole (2), target pole (3).
+	private int number;
+	private String pole1;
+	private String pole2;
+	private String pole3;
+
+	//Default constructor, initialize three disks.
+	public HanoiTower() {
+		this.number = 3;
+		this.pole1 = "Pole1";
+		this.pole2 = "Pole2";
+		this.pole3 = "Pole3";
+	}
+
+	/*
+	Initialize the number of dTmp disks, 
+	which is convenient for selecting the number of disks arbitrarily when creating objects
+	*/
+	public HanoiTower(int dTmp) {
+		this.number = dTmp;
+		this.pole1 = "Pole1";
+		this.pole2 = "Pole2";
+		this.pole3 = "Pole3";
+	}
+
+	//set and get methods
+	public void setNumber(int number) {
+		this.number = number;
+	}
+
+	public int getNumber() {
+		return number;
+	}
+
+	public void setPole1(String pole1) {
+		this.pole1 = pole1;
+	}
+
+	public String getPole1() {
+		return pole1;
+	}
+
+	public void setPole2(String pole2) {
+		this.pole2 = pole2;
+	}
+
+	public String getPole2() {
+		return pole2;
+	}
+
+	public void setPole3(String pole3) {
+		this.pole3 = pole3;
+	}
+
+	public String getPole3() {
+		return pole3;
+	}
+
+	//Create a solution, print every set for tower of hanoi resolution.
+	public void solve(int number, String pole1, String pole2, String pole3) {
+		//If the number of disks is equal to 1, move directly from pole1 to pole3
+		if (number == 1) {
+			System.out.println("Move the disk " + number + " from " + pole1 + " to " + pole3);
+		//If the number of disks is greater than 1, execute here
+		} else {
+			/*
+			The initial pole (1) uses the target pole (3) 
+			to move the disks to the auxiliary pole (2) (except for the bottom disk)
+			*/
+			solve(number - 1, pole1, pole3, pole2);
+			//Move the largest disk in the initial pole(1) to the target pole (3)
+			System.out.println("Move the disk " + number + " from " + pole1 + " to " + pole3);
+			/*
+			Auxiliary pole (2) With the help of the initial pole (1), 
+			move the disks to the target pole (3).
+			*/
+			solve(number - 1, pole2, pole1, pole3);
+		}
+	}
+}

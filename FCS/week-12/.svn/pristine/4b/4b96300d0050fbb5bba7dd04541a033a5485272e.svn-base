@@ -1,0 +1,88 @@
+public class Queue {
+	private Node front;
+	private Node back;
+
+	public Queue() {
+		this.front = null;
+		this.back = null;
+	}
+
+	public void setFront(Node front) {
+		this.front = front;
+	}
+
+	public void setBack(Node back) {
+		this.back = back;
+	}
+
+	public Node getFront() {
+		return this.front;
+	}
+
+	public Node getBack() {
+		return this.back;
+	}
+
+	public void enqueue(Student tmpStudent) {
+		Node temp = new Node(tmpStudent);
+
+		// if (this.back == null) {
+		// 	this.front = temp;
+		// 	this.back = temp;
+		// 	return ;
+		// }
+		temp.setNext(this.back);
+		this.back = temp;
+	}
+
+	public void dequeue() {
+		if (this.front == null) {
+			System.out.println("Empty!");
+			return;
+		} else {
+			Node temp = this.back;
+			while(temp.getNext().getNext() != null) {
+				temp = temp.getNext();
+			}
+			temp.setNext(null);
+		}
+	}
+
+	public String peek() {
+		if (this.back == null) {
+			return " ";
+		} else {
+			Node tmp = this.back;
+			while(tmp.getNext() != null) {
+				tmp = tmp.getNext();
+			}
+			setFront(tmp);
+			return front.getInfo().getName();
+		}
+
+	}
+
+	public void displayQueue() {
+		if (this.back == null) {
+			System.out.println("There are no students waiting for a scholarship");
+		} else {
+			Node temp = this.back;
+			int count =1;
+			while(temp!=null) {
+				Student x = temp.getInfo();
+				System.out.println("#" + count + " " + x.getName() + "," + x.getAge() + "years old ,");
+				String per = "st";
+				if (temp.getInfo().getPeriod()==2) {
+					per = "nd";
+				} else if (temp.getInfo().getPeriod()==3) {
+					per= "rd";
+				}
+				System.out.println(x.getInfo().getPeriod()+per + "year in Hogwarts;");
+				temp = temp.getNext();
+				System.out.println(" ");
+				count++;
+			}
+		}
+	}
+
+}

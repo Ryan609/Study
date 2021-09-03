@@ -1,0 +1,20 @@
+public class Hammer extends HandTool {
+
+	//No-parameter construction method
+	public Hammer() {}
+
+	//Constructor with parameters
+	public Hammer(float weight, float value) {
+		super(weight, value, false);
+	} 
+
+	//Rewrite method
+	@Override
+	public void useTool(int number) {
+		//print text Bang!
+		System.out.println("Bang!");
+		if(this.getValue() >= 0) {
+			this.setValue() = this.setValue() - number * 0.01f;
+		}
+	}
+}

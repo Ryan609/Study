@@ -1,0 +1,36 @@
+public abstract class Tool implements Asset {
+
+	private float weight;
+	private float value;
+
+	////No-parameter construction method
+	public Tool() {}
+
+	//Constructor with parameters
+	public Tool(float weight, float value) {
+		this.weight = weight;
+		this.value = value;
+	}
+
+	//get and set method
+	public float getWeight() {
+		return weight;
+	}
+
+	public void setWeight(float weight) {
+		this.weight = weight;
+	}
+
+	public void setValue(float value) {
+		this.value = value;
+	}
+
+	//Rewrite method
+	@Override
+	public float getValue() {
+		return value;
+	}
+	
+	//abstract method useTool
+	public abstract void useTool(int number);
+}

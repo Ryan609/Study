@@ -1,0 +1,22 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: s1
+// Year:2021
+// Practical Exam Number: 01
+//===================================
+
+
+public class Problem {
+
+   public static void main(String args[]) {
+   	    ///Define variables text and text2.
+        String text1 = "This is my first practical exam";
+        String text2 = "Wish me good luck ";
+        
+        //print value text1 and text2.
+        System.out.println(text1);
+        System.out.println(text2);
+   }
+}

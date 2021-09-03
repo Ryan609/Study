@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class Main {
+	public static void main(String[] args) {
+		
+		Scanner money = new Scanner(System.in);
+		//Print out text.
+		System.out.print("Pleas,enter you want withdrew： ");
+        int cash = money.nextInt();
+        //Run the defined method。
+        run(cash);
+	}
+
+
+	public static void run(int money){
+
+		//Define the value of denomination of 50 and denomination of 20.
+        int money20 = money % 50;
+        int money50 = money - (money % 50);
+        //Define the initial value of cash 20 and cash 50 to be 0
+        int cash20 = 0;
+        int cash50 = 0;
+        
+        //If the input amount is greater than or equal to 50, proceed to this step.
+		if(money >= 50){
+			//If both the denomination of 50 and the denomination of 20 satisfy Modulus equal to 0, perform this step.
+			if(money50 % 50 == 0 && money20 % 20 == 0){
+				cash50 = money50 /50;
+				cash20 = money20 /20;
+		 		System.out.println("Here is " + cash20 + " $20 notes and " + cash50 + " $50 notes ");
+
+		 	//If the denomination of 50 and the denomination of 20 cannot satisfy Modulus equal to 0, perform this step.
+		    } else {
+		     	money50 = money50 - 50; 
+		     	money20 = money20 + 50; 
+		     	cash50 = money50 /50;
+				cash20 = money20 /20;
+		     	System.out.println("Here is " + cash20 + " $20 notes and " + cash50 + " $50 notes ");
+		    }
+
+        //If the amount entered is less than 50. proceed to this step
+	    } else if(money < 50 && money > 0){
+            //Because the input amount is less than 50, not need denomination of 50 is required for calculation.
+	    	if(money20 % 20 == 0){
+	    		cash20 = money20 / 20;
+	    		System.out.println("Here is " + cash20 + " $20 notes and " + cash50 + " $50 notes ");
+
+	    	//The condition cannot be met. Perform this step	
+	    	} else {
+	    		System.out.println("Sorry, the value you input cannot be withdrew.");
+	    	}
+	    }
+	}
+}

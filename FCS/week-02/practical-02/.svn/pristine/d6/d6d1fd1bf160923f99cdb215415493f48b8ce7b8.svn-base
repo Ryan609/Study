@@ -1,0 +1,34 @@
+import java.util.Random;
+
+public class Problem04{
+	public static void main(String[] args) {
+
+		//Create an object.
+		Random number = new Random();
+		int sum = 0;
+		
+        //Use loop to get 10 random numbers within 20
+		for(int i = 1; i < 11; i++) {
+			int num = number.nextInt(20);
+			System.out.print("Number " + num + ": ");
+			sum += num;
+
+			for(int sign = 0; sign < num; sign++) {
+				if (num >= 10) {
+					System.out.print( ">=");
+				} else{
+					System.out.print( "<");
+				}
+			}
+			        System.out.println();
+		}
+
+		int mean = sum/10;
+		System.out.print("Average " + mean + ": ");
+		    for (int sign = 0; sign < mean; sign++) {
+		        System.out.print( "*");	
+		    }
+
+		        System.out.println();
+	}
+}

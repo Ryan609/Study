@@ -1,0 +1,19 @@
+public class PowerDrill extends PowerTool {
+
+	//No-parameter construction method
+	public PowerDrill() {}
+	//Constructor with parameters
+	public PowerDrill(float weight, float value) {
+		super(weight, value, 800);
+	}
+
+	//Rewrite method
+	@Override
+	public void useTool(int number) {
+		//print text Zssh!
+		System.out.println("Zssh!");
+		if (this.value > 0) {
+			this.value = this.value - number * 0.03f;
+		}
+	}
+}

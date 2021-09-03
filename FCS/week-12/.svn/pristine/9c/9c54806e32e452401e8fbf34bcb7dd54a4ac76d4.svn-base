@@ -1,0 +1,52 @@
+public class Queue {
+	private Node front;
+	private Node back;
+
+	public Queue() {
+		this.front = null;
+		this.back = null;
+	}
+
+	public void enqueue(Student tmpStudent) {
+		Node temp = new Node(tmpStudent);
+
+		if (this.back == null) {
+			this.front = temp;
+			this.back = temp;
+			return;
+		}
+		this.back.setNext(temp);
+		this.back = temp;
+	}
+
+	public Student dequeue() {
+		if (this.front == null) {
+			return;
+		}
+
+		Node temp = this.front;
+		this.front = this.front.getNext();
+
+		if (this.front == null) {
+			this.back = null;
+		}
+	}
+
+	public String peek() {
+
+	}
+
+	public void displayQueue() {
+		Node temp = this.front;
+
+		int count = 1;
+
+		while (temp != null) {
+			Student x = temp.getInfo();
+			System.out.println("#" + count + " " + x.getName() + " " + x.getAge() + "years old" + x.getPeriod() + "in Hogwarts");
+			temp = temp.getNext();
+			count++;
+		}
+	}
+
+}

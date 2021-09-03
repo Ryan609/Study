@@ -1,0 +1,33 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: S1
+// Year:2021
+// Practical Exam Number: 02
+//===================================
+
+public class HandlingArrays {
+
+    public static void printArray(double [] testArray) {
+
+          System.out.print("printing Array: [");
+          for(int i = 0; i < testArray.length; i++) {
+          	if(i == testArray.length - 1) {
+          		System.out.print(testArray[i]);
+          	} else {
+          		System.out.print(testArray[i] + ",");
+          	}
+          }
+     }
+
+    public static double[] sumElements(double [] firstArray, double [] secondArray) {
+    	
+    	
+     }
+
+    public static double[] reverseArray(double [] testArray) {
+          
+     }
+
+}

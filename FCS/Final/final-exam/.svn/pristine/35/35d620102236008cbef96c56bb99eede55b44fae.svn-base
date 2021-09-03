@@ -1,0 +1,76 @@
+/*==================================
+Foundations of Computer Science
+Student: Xinyan Wu
+id: a1809534
+Semester: s1
+Year: 2021
+Final Exam
+===================================*/
+import java.util.ArrayList;
+
+public class Club {
+    // Create an initial array list.
+    ArrayList<Player> players = new ArrayList<Player>();
+
+    public Club(ArrayList<Player> players) {
+       this.players = players;
+    }
+
+    //Creat addMembers method.
+    public void addMember(Player members) {
+        // Add players to the array
+        players.add(members);
+    }
+
+    //Creat removeMemberByld method.
+    public boolean removeMemberByld(int id) {
+        // Use a for loop to traverse the array
+        for (int i = 0; i < players.size(); i++) {
+
+            /*
+            Use the if statement to determine whether 
+            the input id is equal to the id in the array   
+            */
+            if (players.get(i).getId() ==  id) {
+                // Call the remove method to remove the player at index i
+                players.remove(i); 
+                return true; //return true
+            }
+        }
+        // If there is none in the array, return false
+        return false;
+    }
+
+    // Create  getHighestRankedPlayer method
+    public Player getHighestRankedPlayer() {
+        // If the array is 0, return null
+        if (players.size() == 0) {
+            return null;
+        } else {
+            // Use a for loop to traverse the array
+            for (int i = 0; i < players.size(); i++) {
+                Player highRank = players.get(0);// Define a highrank 
+                if (highRank.getRanking() < players.get(i).getRanking()) {
+                    highRank = players.get(i);
+                } else if (highRank.getRanking() == players.get(i).getRanking()) {
+                    if (highRank.getId() < players.get(i).getId()) {
+                        highRank = players.get(i);
+                    }
+                }
+            }
+        }
+        return null;
+    }
+    //creat PrintMembrs method
+    public void printMembers() {
+        // Use a for loop to traverse the array
+        for (int i = 0; i < players.size(); i++) {
+            //call toString mehod print.
+            System.out.println(players.get(i).toString());
+        }
+    }
+
+
+
+
+}

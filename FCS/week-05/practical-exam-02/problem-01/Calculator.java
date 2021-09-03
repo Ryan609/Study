@@ -1,0 +1,42 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: S1
+// Year:2021
+// Practical Exam Number: 02
+//===================================
+
+
+public class Calculator {
+
+	//sum method
+	public int sum(int numA, int numB) {
+
+		return numA + numB;
+	}
+
+	//sub method
+	public int sub(int numA, int numB) {
+		return numA - numB;
+	}
+
+	//multiply method
+	public float multiply(float numA, float numB) {
+		return numA * numB;
+	}
+
+	//division method
+	public float division(float numA, float numB) {
+		float numC;
+        // Determine whether numb is 0
+        if (numB == 0) {
+            numC = -99.0f;
+            return numC;
+        } else {
+            numC = numA / numB;
+            return numC;
+        }
+	}
+
+}

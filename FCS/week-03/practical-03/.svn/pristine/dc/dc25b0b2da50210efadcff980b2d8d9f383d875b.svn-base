@@ -1,0 +1,49 @@
+import java.util.Scanner;
+import java.util.InputMismatchException;
+
+public class Problem02{
+	public static void main(String[] args) {	
+		Scanner number = new Scanner(System.in);
+
+
+		try {
+			//Enter a number and run the method prime
+			System.out.print("please, insert a number: ");
+			int num = number.nextInt();
+			prime(num);
+
+		//If the input type is not int type, catch the error and print the text
+		} catch (InputMismatchException e){
+			System.out.println("Your input is worng");
+		}
+
+	}
+
+
+	//Define the method to determine whether a number is a prime number
+	public static void prime(int number){
+
+		//If the number is less than 2 print the text below
+		if (number < 2) {
+			System.out.println("Your number is not prime");
+		//If the number is equal to 2 print the text below
+		} if (number == 2){
+			System.out.println("Your number is  prime");
+		}
+
+
+		for(int i = 2; i < number; i++){
+			//If the input number is greater than 2, and the remainder of i is equal to 0, then it is not a prime number.
+			if (number % i == 0){
+				System.out.println("Your number is not prime");
+				break;
+			//If it is not equal to 0 then it is a prime number
+			} else {
+				System.out.println("Your number is prime");
+				break;
+			} 
+		}
+
+	}
+}
+

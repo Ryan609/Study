@@ -1,0 +1,76 @@
+public class Main {
+
+	public static void main(String[] args) {
+		//Create search object
+		MysearchAlg a = new LinearSearch();
+		BinarySearch b = new BinarySearch();
+
+		//Define three arrays
+		int[] array = {3, 6, 9, 12, 15, 18};
+		int[] array1 = {155, 22, 345, 23, 13, 18};
+		int[] array2 = {3, 10, 2, 7, 9, 12};
+
+		System.out.println("---------LinearSearch----------");
+		int pos = a.search(array, 18);	//Call linearsearch and assign the result to pos
+		System.out.println("Item found at position: " + pos);	//Print the returned result
+		System.out.println(test(pos, 5));	//Call the test method and print the result
+		System.out.println();
+
+		int pos1 = a.search(array1, 155);	//Call linearsearch and assign the result to pos1
+		System.out.println("Item found at position: " + pos1);	//Print the returned result
+		System.out.println(test(pos1, 1));	//Call the test method and print the result
+		System.out.println();
+
+		int pos2 = a.search(array2, 12);	//Call linearsearch and assign the result to pos2
+		System.out.println("Item found at position: " + pos2);	//Print the returned result
+		System.out.println(test(pos2, 4));	//Call the test method and print the result
+		System.out.println("-------------------------------");
+
+		System.out.println("----------BinarySearch---------");
+		int pos3 = b.search(array, 15);	//Call binarysearch and assign the result to pos3
+		System.out.println("Item found at position: " + pos3);	//Print the returned result
+		System.out.println(test(pos3, 5));	//Call the test method and print the result
+		System.out.println();
+
+		int pos4 = b.search(array1, 345);	//Call binarysearch and assign the result to pos4
+		System.out.println("Item found at position: " + pos4);	//Print the returned result
+		System.out.println(test(pos4, 1));	//Call the test method and print the result
+		System.out.println();
+
+		int pos5 = b.search(array2, 9);	//Call binarysearch and assign the result to pos5
+		System.out.println("Item found at position: " + pos5);	//Print the returned result
+		System.out.println(test(pos5, 4));	//Call the test method and print the result
+		System.out.println("-------------------------------");
+
+		System.out.println("-----------findMaxVal----------");
+		int[] array3 = {4, 7, 10, 12, 13, 9, 2};	//Define an array
+		System.out.println("output: " + findMaxVal(array3)); //Call the findmaxval method and print the result
+		int pos6 = b.search(array3, 13);	//Call binarysearch and assign the result to pos6
+		System.out.println("Item found at position: " + pos6);	//Print the returned result
+		System.out.println("-------------------------------");
+	}
+
+	//Define the test method
+	private static boolean test(int result, int ans) {
+		//Use if statement to determine whether they are equal
+		if (result == ans) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	//Create findmaxval method
+	private static int findMaxVal(int array[]) {
+		//Initialize maxindex
+		int maxIndex = 0;
+		//Use a for loop to traverse the array
+		for (int i = 0; i < array.length; i++) {
+			//Use the if statement to determine whether the element at the current position is the maximum
+			if (array[i] > array[maxIndex]) {
+				maxIndex = i;
+			}
+		}
+		return maxIndex;
+	}
+}

@@ -1,0 +1,5 @@
+public abstract class MysearchAlg {
+
+	//Define abstract  search methods
+	abstract int search(int[] array, int num);
+}

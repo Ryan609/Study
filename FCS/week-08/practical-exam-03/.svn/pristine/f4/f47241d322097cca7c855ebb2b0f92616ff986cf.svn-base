@@ -1,0 +1,4 @@
+public interface Asset {
+	//get value method
+	public float getValue();
+}

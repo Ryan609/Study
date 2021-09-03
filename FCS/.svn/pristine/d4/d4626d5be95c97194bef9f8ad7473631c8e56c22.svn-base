@@ -1,0 +1,23 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: s1
+// Year:2021
+// Practical Exam Number: 01
+//===================================
+
+public class Problem {
+   public static void main(String args[]) {
+        
+        //Print definition content
+   	    System.out.print("[");
+
+        //Print from 101-81
+        for (int i = 101; i >= 81; i--) {
+        	System.out.print(i + ",");
+        }
+        //Print definition content
+        System.out.print("]");
+   }
+}

@@ -1,0 +1,23 @@
+import java.util.Random;
+
+public class Analysis{
+    public static void main(String[] args) {
+         
+        //Create an object.
+        Random number = new Random();
+
+            int sum = 0;
+        //Use loop to get 10 random numbers within 20
+     	for(int i = 1; i < 11; i++) {
+     		int num = number.nextInt(20);
+            
+     		System.out.println("Number" + i + " is: " + num);
+     		sum += num;
+        }
+
+     	    float mean = (float)sum/10;
+     	    System.out.println("sum = " + sum);
+     	    System.out.println("mean = " + mean);
+     
+     }
+}

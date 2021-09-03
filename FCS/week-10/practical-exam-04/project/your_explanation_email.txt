@@ -1,0 +1,8 @@
+Dear manager, 
+
+The problem (1), was due to <Exception in thread "main" >, I fixed doing @Override
+	public String [] sortString(String [] arr) and public int [] sortStringByIndex(String [] arr);  
+The problem (2), was due to strange message, I fixed doing company 40 line change seachr method; 
+The problem (3), was due to <your explanation>, I fixed doing <your explanation>;
+
+Kind regards, Xinyan Wu a1809534

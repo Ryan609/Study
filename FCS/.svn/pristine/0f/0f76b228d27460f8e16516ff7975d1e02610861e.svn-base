@@ -1,0 +1,31 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: s1
+// Year:2021
+// Practical Exam Number: 01
+//===================================
+
+import java.util.Scanner;
+
+public class Problem {
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner(System.in);
+
+            //Print text on the screen.
+    	    System.out.printf("Enter a distance in miles: ");
+    	    //get the String type entered by the user
+    	    float number = input.nextFloat();
+
+            //Set number range
+    	    if( number >= 0 && number <= 1000 ) {
+    	    	//If the number is 0-1000 print the following
+                System.out.printf("The distance in kilometres is " + String.format("%.2f", (float)number*1.6093));
+    	    } else {
+    	        System.out.printf("The distance" + number + "is out of range");
+    	    }
+                
+    }
+}

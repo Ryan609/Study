@@ -1,0 +1,31 @@
+//==================================
+// Foundations of Computer Science
+// Student: Xinyan Wu
+// id: a1809534
+// Semester: s1
+// Year:2021
+// Practical Exam Number: 01
+//===================================
+
+public class Problem {
+
+   public static void main(String args[]) {
+        //Use loop to get 40 numbers.
+       	for(int i = 1; i < 41; i++) {
+
+            //Use nested loops to obtain symbols equal to the number of numbers
+       		for (int j = 0; j < i; j++){
+       			//Prescribe each symbol
+			    if ( i < 10) {
+				    System.out.print( "*");
+			    } else if (i < 20) {
+				    System.out.print( "=");
+			    } else if (i < 30) {
+				    System.out.print( "x");
+			    } else 		
+			       System.out.print( "o");
+			}
+			       System.out.println();
+		}
+   }
+}

@@ -1,0 +1,28 @@
+public class Test2 {
+
+   public static void main(String args[]) {
+ 
+      int height = 180;
+
+      switch(height) {
+         case 150 :
+            System.out.println("short"); 
+            break;
+         case 160 :
+            System.out.println("normal");
+            break;
+         case 170 :
+            System.out.println("Well done");
+            break;
+         case 180 :
+            System.out.println("High");
+            break;
+         case 190 :
+            System.out.println("Very_high");
+            break;
+         default :
+            System.out.println("good");
+      }
+      System.out.println("Your hight is " + height);
+   }
+}

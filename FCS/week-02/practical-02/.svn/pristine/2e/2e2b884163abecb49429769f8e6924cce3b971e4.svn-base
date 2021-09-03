@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Part3{
+
+	public static void main(String[] args) {
+		
+		Scanner input = new Scanner(System.in);
+            
+           
+			System.out.println("Welcome dear user!");
+			System.out.println("Would you like to:");
+			System.out.println("a) sum again");
+			System.out.println("b) exit");
+			System.out.print("Option: ");
+            String choice = input.nextLine();
+            
+        while (choice.equals("a")) {
+        	System.out.print("Please, insert the first number: ");
+			int numberA = input.nextInt();
+			System.out.print("Please, insert the second number: ");
+			int numberB = input.nextInt();
+			System.out.println("----");
+			System.out.printf("Thank you for your enquiry, the sum between (%d) and (%d) is (%d)", numberA, numberB, numberA + numberB);
+            System.out.println();
+
+			System.out.println("Welcome dear user!");
+			System.out.println("Would you like to:");
+			System.out.println("a) sum again");
+			System.out.println("b) exit");
+			System.out.print("Option: ");
+			input.nextLine();
+			choice = input.nextLine();
+        }
+
+        System.out.println("Thank you! Have a good day.");
+    }
+}    
