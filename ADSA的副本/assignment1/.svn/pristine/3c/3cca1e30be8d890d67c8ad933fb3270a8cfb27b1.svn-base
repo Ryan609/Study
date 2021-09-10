@@ -1,0 +1,57 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class methood {
+public:
+	string add(string num1, string num2, int bit) {
+
+		if (num1.size()<num2.size()) {
+			string tempnum = num1;
+			num1 = num2;
+			num2 = tempnum;
+		}
+		
+		int length1 = num1.size(), length2 = num2.size();
+		int flag = 0;
+		int numa, numb, sum;
+		while (length1 > 0) {
+			numa = num1[length1 - 1] - '0';
+			if (length2 > 0) {
+				numb = num2[length2 - 1] - '0';
+			} else {
+				numb = 0;
+			}
+			sum = numa + numb + flag;
+			if (sum >= bit) {
+				num1[length1 - 1] = '0' + sum % bit;
+				flag = 1;
+			} else {
+				num1[length1 - 1] = '0' + sum;
+				flag = 0;
+			}
+			length1--;
+			length2--;	
+		}
+		if (1 == flag) {
+			num1 = "1" + num1;
+		}
+		return num1;
+	}
+	
+	string sub() {
+		return 0;
+	}
+};
+
+int main() {
+	string num1, num2;
+	int bit;
+	methood add;
+	cout << "Samole input: ";
+	cin >> num1 >> num2 >> bit;
+	cout <<"Sample outpuy:"<< add.add(num1, num2, bit) << endl;
+
+	return 0;
+}
